@@ -1,0 +1,48 @@
+{%- comment -%}
+  Outputs brand variables dynamically or manually
+  -----------------------------------------------
+  Usage:
+  {%- render 'site-switcher'
+  - brand_suffix: { string } optional | Use brand1, brand2, or brand3 for manual input. Leave blank for dynamic input (based on
+  template suffix of current page)
+  - print_handle: { boolean } optional | defaults to false, set to true to output the brand handle
+  -%}
+
+  Example:
+  {%- render 'site-switcher' with brand_suffix: brand3, print_handle: true -%}
+{%- endcomment -%}
+
+{% liquid
+  if page.template_suffix
+    assign brand_suffix = page.template_suffix
+  elsif product.template_suffix
+    assign brand_suffix = product.template_suffix
+  elsif collection.template_suffix
+    assign brand_suffix = collection.template_suffix
+  elsif blog.template_suffix
+    assign brand_suffix = blog.template_suffix
+  else
+    assign brand_suffix = 'brand1'
+  endif
+
+  if brand_suffix contains 'brand1'
+    assign brandHandle = 'brand1'
+    assign mainURL = brandHandle | prepend: '/pages/'
+  elsif brand_suffix contains 'brand2'
+    assign brandHandle = 'brand2'
+    assign mainURL = brandHandle | prepend: '/pages/'
+  elsif brand_suffix contains 'brand3'
+    assign brandHandle = 'brand3'
+    assign mainURL = brandHandle | prepend: '/pages/'
+  elsif brand_suffix contains 'brand4'
+    assign brandHandle = 'brand4'
+    assign mainURL = brandHandle | prepend: '/pages/'
+  else
+    assign brandHandle = 'brand1'
+    assign mainURL = '/'
+  endif
+%}
+
+{% if print_handle == true %}
+  {{ brandHandle | strip }}
+{% endif %}

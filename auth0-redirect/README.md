@@ -57,3 +57,17 @@ This script is designed to detect when a user visits the Shopify login page and 
     (localeParam ? localeParam : "");
 </script>
 ```
+
+## 🎯 Why This Matters
+
+### Seamless User Experience 🌟
+
+Redirects users smoothly from Shopify’s login page to Auth0 without manual intervention.
+
+### Preserves Return URL 🔄
+
+Ensures users return to the correct page post-login.
+
+### Supports Localization 🌍
+
+Passes the user's locale for a region-specific authentication experience.

@@ -1,0 +1,8 @@
+{%- comment -%}
+  Required:
+  _mobile_space: the space in pixels to go beneath the section on mobile sizes
+  _desktop_space: the space in pixels to go beneath the section on desktops
+{%- endcomment -%}
+
+<div class="lg:hidden" style="margin-bottom: {{ _mobile_space }}px"></div>
+<div class="hidden lg:block" style="margin-bottom: {{ _desktop_space }}px"></div>
