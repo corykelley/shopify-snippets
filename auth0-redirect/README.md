@@ -32,7 +32,7 @@ This script is designed to detect when a user visits the Shopify login page and 
 
 ## 🛠 Code Implementation
 
-```html
+```js
 <script>
   const searchParams = new URLSearchParams(window.location.search);
   let locale = Shopify.routes.root;
@@ -60,14 +60,14 @@ This script is designed to detect when a user visits the Shopify login page and 
 
 ## 🎯 Why This Matters
 
-### Seamless User Experience 🌟
+### ✅ Seamless User Experience
 
 Redirects users smoothly from Shopify’s login page to Auth0 without manual intervention.
 
-### Preserves Return URL 🔄
+### ✅ Preserves Return URL
 
 Ensures users return to the correct page post-login.
 
-### Supports Localization 🌍
+### ✅ Supports Localization
 
 Passes the user's locale for a region-specific authentication experience.

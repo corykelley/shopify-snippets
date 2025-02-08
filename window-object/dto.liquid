@@ -8,12 +8,7 @@
       brand2: {{ settings.brand2_default_image | json }},
       brand3: {{ settings.brand3_default_image | json }}
     },
-    geoLocationBlocking: {{- settings.enable_visuals_blocking | json -}},
-    allSupportedMarkets: [
-      {%- for supported_markets in all_supported_markets -%}
-        {{- supported_markets | downcase | json -}}{% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
-    ]
+    geoLocationBlocking: {{- settings.enable_visuals_blocking | json -}}
   };
 
   {%- if template.name contains 'product' -%}
